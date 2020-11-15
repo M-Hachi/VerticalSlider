@@ -8,12 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4ECB4C99255C06CE00125345 /* VerticalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECB4C97255C06CE00125345 /* VerticalSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4ECB4CA5255C088700125345 /* SliderRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB4CA4255C088700125345 /* SliderRenderer.swift */; };
+		4ECB4CA8255C0C7300125345 /* SliderGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB4CA7255C0C7300125345 /* SliderGestureRecognizer.swift */; };
+		4ECB4CAF255C0D0F00125345 /* VerticalSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB4CAE255C0D0F00125345 /* VerticalSlider.swift */; };
+		4ECB4CB2255D61CE00125345 /* VerticalSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB4CB1255D61CE00125345 /* VerticalSliderTrackLayer.swift */; };
+		4ECB4CB9255D66F500125345 /* VerticalSliderThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB4CB8255D66F500125345 /* VerticalSliderThumbLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4ECB4C94255C06CE00125345 /* VerticalSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VerticalSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECB4C97255C06CE00125345 /* VerticalSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalSlider.h; sourceTree = "<group>"; };
 		4ECB4C98255C06CE00125345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ECB4CA4255C088700125345 /* SliderRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderRenderer.swift; sourceTree = "<group>"; };
+		4ECB4CA7255C0C7300125345 /* SliderGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderGestureRecognizer.swift; sourceTree = "<group>"; };
+		4ECB4CAE255C0D0F00125345 /* VerticalSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSlider.swift; sourceTree = "<group>"; };
+		4ECB4CB1255D61CE00125345 /* VerticalSliderTrackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSliderTrackLayer.swift; sourceTree = "<group>"; };
+		4ECB4CB8255D66F500125345 /* VerticalSliderThumbLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSliderThumbLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +56,11 @@
 		4ECB4C96255C06CE00125345 /* VerticalSlider */ = {
 			isa = PBXGroup;
 			children = (
+				4ECB4CA7255C0C7300125345 /* SliderGestureRecognizer.swift */,
+				4ECB4CA4255C088700125345 /* SliderRenderer.swift */,
+				4ECB4CB1255D61CE00125345 /* VerticalSliderTrackLayer.swift */,
+				4ECB4CB8255D66F500125345 /* VerticalSliderThumbLayer.swift */,
+				4ECB4CAE255C0D0F00125345 /* VerticalSlider.swift */,
 				4ECB4C97255C06CE00125345 /* VerticalSlider.h */,
 				4ECB4C98255C06CE00125345 /* Info.plist */,
 			);
@@ -94,6 +109,7 @@
 				TargetAttributes = {
 					4ECB4C93255C06CE00125345 = {
 						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1210;
 					};
 				};
 			};
@@ -130,6 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ECB4CAF255C0D0F00125345 /* VerticalSlider.swift in Sources */,
+				4ECB4CA5255C088700125345 /* SliderRenderer.swift in Sources */,
+				4ECB4CB9255D66F500125345 /* VerticalSliderThumbLayer.swift in Sources */,
+				4ECB4CA8255C0C7300125345 /* SliderGestureRecognizer.swift in Sources */,
+				4ECB4CB2255D61CE00125345 /* VerticalSliderTrackLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +282,7 @@
 		4ECB4C9D255C06CE00125345 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = DG8VYSCKG3;
@@ -269,6 +291,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VerticalSlider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -277,6 +300,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabe-mori.VerticalSlider";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,6 +309,7 @@
 		4ECB4C9E255C06CE00125345 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = DG8VYSCKG3;
@@ -293,6 +318,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VerticalSlider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
