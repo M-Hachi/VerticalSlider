@@ -35,19 +35,18 @@ class VerticalSliderThumbLayer: CALayer {
     func deltaPositionForValue(value: Double) -> CGFloat {
         return CGFloat(value/(verticalSliderRenderer!.maximumValue-verticalSliderRenderer!.minimumValue)*Double(self.trackHeight))
     }
-    
+    var thumbCenter:CGPoint=CGPoint(x: 0, y: 0)
+    var thumbFrame: CGRect{
+        return CGRect(x: thumbCenter.x-thumbWidth/2, y: thumbCenter.y-thumbHeight/2, width: thumbWidth, height: thumbHeight)
+    }
     override func draw(in ctx: CGContext) {
-        //print("draw thumb")
         if let renderer = verticalSliderRenderer {
-            //print("draw isset")
-            print("thumb bounds = \(self.bounds)")
-            let yval :CGFloat = deltaPositionForValue(value: (renderer.maximumValue-renderer.minimumValue)*(1-renderer.sliderValue)) //+ self.bounds.height*0.5
-            let thumbCenter: CGPoint = CGPoint(x: bounds.width*0.5, y: yval)
-            let thumbFrame = CGRect(x: thumbCenter.x-thumbWidth*0.5, y: thumbCenter.y+thumbHeight*0.5, width: thumbWidth, height: thumbHeight)
-            print("thumb frame = \(thumbFrame)")
-            //let thumbFrame = bounds.insetBy(dx: 2.0, dy: 2.0)
+            //print("thumb bounds = \(self.bounds)")
+            let yval :CGFloat = deltaPositionForValue(value: (0.5-renderer.sliderValue)) + self.bounds.height/2
+            thumbCenter = CGPoint(x: bounds.width*0.5, y: yval)
             let cornerRadius = thumbFrame.height * renderer.curvaceousness / 2.0
             let thumbPath = UIBezierPath(roundedRect: thumbFrame, cornerRadius: cornerRadius)
+            
             // Fill - with a subtle shadow
             let shadowColor = UIColor.gray
             ctx.setShadow(offset: CGSize(width: 0.0, height: 1.0), blur: 4.0, color: shadowColor.cgColor)

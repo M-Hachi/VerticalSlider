@@ -5,9 +5,6 @@ import Foundation
 import UIKit
 
 class SliderRenderer {
-    
-    //let trackLayer = CAShapeLayer()
-    //let thumbLayer = CAShapeLayer()
     //var verticalSlider = VerticalSlider()
     let trackLayer = VerticalSliderTrackLayer()
     let thumbLayer = VerticalSliderThumbLayer()
